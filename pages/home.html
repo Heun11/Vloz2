@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/009/267/428/non_2x/element-flower-icon-free-png.png">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/pc.css">
+    <link rel="stylesheet" href="/app.css">
+    <script src="/script.js"></script>
+    <title>Vloz2</title>
+</head>
+<body>
+    <div class="info-image-background">
+        <div class="info-image-background-overlay">
+            <button class="btn"><a href="/about">About</a></button>
+            <h1 class="info-image-background-overlay-text">Vloz2</h1>
+        </div>
+    </div>
+
+    <div class="info-header-box">
+        <h1>Nejaký nadpis</h1>
+    </div>
+    <hr>
+    <div class="info-box">
+        <p>
+            Pastry wafer marzipan tiramisu sweet pudding toffee. Candy soufflé jelly beans tart jelly beans chocolate muffin gingerbread wafer. Toffee jelly beans lemon drops gingerbread tiramisu bear claw tart.
+        </p>
+    </div>
+    <hr>
+    <div class="info-box">
+        <% for(var i=0; i < files.length; i++) { %>
+            <div>
+                <p><%=files[i]%></p>
+                <a href="/download/<%=files[i]%>">download</a>
+                <a href="/delete/<%=files[i]%>">delete</a>
+            </div>
+         <% } %>
+    </div>
+</body>
+</html>

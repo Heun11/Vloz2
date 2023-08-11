@@ -1,0 +1,19 @@
+{
+    "name": "node-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "*",
+        "ejs": "^3.1.9",
+        "express": "*",
+        "multer": "*",
+        "path": "*"
+    }
+}

@@ -1,0 +1,122 @@
+/* https://coolors.co/7be0ad-aee5d8-e7e5e5-e5d0e3-e0b0d5 */
+
+body{
+    /* background-image: linear-gradient(
+        to right, rgb(201, 202, 177), rgb(247, 227, 237)
+    ); */
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
+hr{
+    float: left;
+    border: 1px solid #E0B0D5;
+    width: 20%;
+    margin-left: 40% !important;
+}
+
+.navbar-item:hover{
+    background-color: rgba(211, 56, 139, 0.343);
+    color: rgb(0, 0, 0);
+}
+
+/* PC */
+@media screen and (min-width: 480px) {
+    /* css for large device */
+    /*                      */
+
+    .navbar{
+        margin: 1%;
+        background-color: #E7E5E5;
+        list-style-type: none;
+        overflow: hidden;
+        border-radius: 20px;
+        height: 4rem;
+    }
+    
+    .navbar-item{
+        float:left;
+        color: rgb(85, 84, 84);
+        text-align: center;
+        min-height: 100%;
+        min-width: 10%;
+        transition: all 0.5s;
+    }
+
+    .navbar-item-a{
+        /* border-width: 2px; */
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+    }
+
+    .info-header-box{
+        /* float: left; */
+        padding: 2%;
+        margin: 0 auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        border-radius: 10px;
+        /* background-color: rgb(211, 236, 211); */
+        font-size: 320%;
+        width: max-content;
+        font-weight: bold;
+    }
+    
+    .info-box{
+        padding: 1%;
+        margin: 0 auto;
+        border-radius: 10px;
+        /* background-color: honeydew; */
+        width: 50%;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+    
+    .info-image-background{
+        margin: 0 auto;
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
+        border-radius: 10px;
+        background-size: cover;
+        background-image:url("https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?cs=srgb&dl=pexels-tiger-lily-4483610.jpg&fm=jpg");
+        width: 98%;
+        height: 95vh;
+    }
+    
+    .info-image-background-overlay{
+        display: flex;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #E7E5E5 44%, rgba(255,0,0,0));
+        width: 100%;
+        height: 95vh;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    
+    .info-image-background-overlay-text{
+        color: #c13812;
+        font-size: 6rem;
+        font-family:monospace;
+        margin-left: 15%;
+    }
+
+    .info-image-background-overlay .btn {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #c91414;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+    }
+}
