@@ -15,42 +15,10 @@ hr{
     margin-left: 40% !important;
 }
 
-.navbar-item:hover{
-    background-color: rgba(211, 56, 139, 0.343);
-    color: rgb(0, 0, 0);
-}
-
 /* PC */
 @media screen and (min-width: 480px) {
     /* css for large device */
     /*                      */
-
-    .navbar{
-        margin: 1%;
-        background-color: #E7E5E5;
-        list-style-type: none;
-        overflow: hidden;
-        border-radius: 20px;
-        height: 4rem;
-    }
-    
-    .navbar-item{
-        float:left;
-        color: rgb(85, 84, 84);
-        text-align: center;
-        min-height: 100%;
-        min-width: 10%;
-        transition: all 0.5s;
-    }
-
-    .navbar-item-a{
-        /* border-width: 2px; */
-        height: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 120%;
-    }
 
     .info-header-box{
         /* float: left; */
@@ -118,5 +86,25 @@ hr{
         cursor: pointer;
         border-radius: 5px;
         text-align: center;
+    }
+
+    .files-list{
+        padding: 1%;
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: honeydew;
+        width: 50%;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    .file{
+        background-color: red;
+        margin-bottom: 1%;
+    }
+
+    .file button{
+        background-color: blue;
     }
 }

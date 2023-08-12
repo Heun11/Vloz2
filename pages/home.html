@@ -23,20 +23,26 @@
         <h1>Nejaký nadpis</h1>
     </div>
     <hr>
-    <div class="info-box">
+    <!-- <div class="info-box">
         <p>
-            Pastry wafer marzipan tiramisu sweet pudding toffee. Candy soufflé jelly beans tart jelly beans chocolate muffin gingerbread wafer. Toffee jelly beans lemon drops gingerbread tiramisu bear claw tart.
+                
         </p>
     </div>
-    <hr>
-    <div class="info-box">
+    <hr> -->
+    <div class="files-list">
         <% for(var i=0; i < files.length; i++) { %>
-            <div>
+            <div class="file">
                 <p><%=files[i]%></p>
-                <a href="/download/<%=files[i]%>">download</a>
-                <a href="/delete/<%=files[i]%>">delete</a>
+                <button><a href="/download/<%=files[i]%>">download</a></button>
+                <button><a href="/delete/<%=files[i]%>">delete</a></button>
             </div>
          <% } %>
     </div>
+    <hr>
+    <br>
+    <form action="/upload" method="post", enctype="multipart/form-data">
+        <input type="file" name="files" multiple>
+        <button type="submit">upload</button>
+    </form>
 </body>
 </html>

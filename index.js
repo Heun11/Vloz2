@@ -1,6 +1,8 @@
 var express = require('express');
 var path = require('path');
-var fs = require('fs')
+var fs = require('fs');
+var formidable = require('formidable');
+var multer = require('multer');
 var app = express();
 
 // const PORT = process.env.PORT || 3030;
@@ -16,6 +18,16 @@ app.use(express.static(path.join(__dirname,'resources')));
 
 const files_folder = path.join(__dirname, 'files');
 
+var fileStorageEngine = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, files_folder);
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({storage:fileStorageEngine});
+
 app.use('/', function(req, res, next){
     console.log("A new request received at " + Date.now());
     next();
@@ -25,7 +37,7 @@ app.get('/', function(req, res){
     var files_arr = [];
     fs.readdir(files_folder, function (err, files) {
         if (err) {
-            return console.log('Unable to scan directory: ' + err);
+            console.log('Unable to scan directory: ' + err);
         } 
         files.forEach(function (file) {
             files_arr.push(file);
@@ -35,15 +47,28 @@ app.get('/', function(req, res){
 });
 
 app.get('/delete/:filename', function(req, res){
-    res.end(req.params.filename);
+    var filePath = path.join(files_folder, '/'+req.params.filename);
+    fs.unlink(filePath, function (err) {
+        if (err){
+            res.end('neda sa vymazat');
+        }
+        else{
+            console.log('File deleted!');
+            res.redirect('/');
+        }
+    }); 
 });
 
 app.get('/download/:filename', function(req, res){
-    res.end(req.params.filename);
+    // res.end(req.params.filename);
+    var filePath = path.join(files_folder, '/'+req.params.filename);
+    res.download(filePath);
 });
 
-app.get('/upload/:filename', function(req, res){
-    res.end(req.params.filename);
+app.post("/upload", upload.array('files'), (req, res) => {
+    console.log(req.files);
+    console.log('Files uploaded!');
+    res.redirect('/');
 });
 
 app.get('*', function(req, res){
@@ -53,4 +78,7 @@ app.get('*', function(req, res){
 // app.listen(PORT, () => {
 //     console.log(`server started on port ${PORT}`);
 // });
-app.listen(8080);
+
+app.listen(8080, ()=>{
+    console.log('Server started')
+});
