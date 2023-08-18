@@ -5,8 +5,6 @@ var formidable = require('formidable');
 var multer = require('multer');
 var app = express();
 
-// const PORT = process.env.PORT || 3030;
-
 // app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 app.set('views', path.join(__dirname, '/pages'));
@@ -75,10 +73,12 @@ app.get('*', function(req, res){
     res.render('404.html', {root: __dirname+'/pages'});
 });
 
-// app.listen(PORT, () => {
-//     console.log(`server started on port ${PORT}`);
-// });
 
-app.listen(8080, ()=>{
-    console.log('Server started')
+const PORT = process.env.PORT || 3030;
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
 });
+
+// app.listen(8080, ()=>{
+//     console.log('Server started')
+// });
