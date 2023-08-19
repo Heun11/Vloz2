@@ -78,7 +78,3 @@ const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
     console.log(`server started on port ${PORT}`);
 });
-
-// app.listen(8080, ()=>{
-//     console.log('Server started')
-// });
