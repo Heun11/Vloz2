@@ -3,6 +3,7 @@ var first_time_open_popup = true;
 
 function openAboutPopup(){
     document.getElementById("about-popup").style.width = window.innerWidth*0.4+"px";
+    document.getElementById("about-popup").style.padding = "2%";
     document.getElementById("about-popup").style.opacity = 1;
 
     document.getElementById("popup-background").style.zIndex = 1;
@@ -13,6 +14,7 @@ function openAboutPopup(){
 function closeAboutPopup(){
     document.getElementById("about-popup").style.width = "0px";
     document.getElementById("about-popup").style.opacity = 0;
+    document.getElementById("about-popup").style.padding = "0%";
 
     document.getElementById("popup-background").style.zIndex = -1;
     document.getElementById("popup-background").style.width ="0px";

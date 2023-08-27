@@ -14,8 +14,8 @@
 <body>
     <div class="info-image-background">
         <div class="info-image-background-overlay">
-            <button class="btn" onclick="openAboutPopup()">About</button>
-            <h1 class="info-image-background-overlay-text">Vloz2</h1>
+            <button class="btn" onclick="openAboutPopup()">About 🛳️</button>
+            <h1 class="info-image-background-overlay-text">Vloz2 📦</h1>
         </div>
     </div>
 
@@ -34,39 +34,37 @@ Reprehenderit nisi duis ad enim qui commodo velit pariatur. Laborum sint ex ad v
 
 
     <div class="info-header-box">
-        <h1>Nejaký nadpis</h1>
+        <h1>Upload 📦 Here:</h1>
     </div>
-    <hr>
-    <!-- <div class="info-box">
-        <p>
-                
-        </p>
+
+    <form class="upload-form" action="/upload" method="post", enctype="multipart/form-data">
+        <input type="file" name="files" multiple>
+        <input type="number" placeholder="num of days" name="time_of_deletion">
+        <button type="submit">Upload 🚚</button>
+    </form>
+
+    <div class="info-header-box">
+        <h1>Download 📦 Here:</h1>
     </div>
-    <hr> -->
+
     <div class="files-list">
         <% for(var i=0; i < files.length; i++) { %>
             <div class="file">
-                <p><%=files[i].filename%></p>
+                <h1><%=files[i].filename%></h1>
                 <form action="/download/<%=files[i].filename%>" method="post", enctype="multipart/form-data">
-                    <button type="submit">Download</button>
+                    <button type="submit">Download ⚓</button>
                 </form>
                 <form action="/delete/<%=files[i].filename%>" method="post", enctype="multipart/form-data">
-                    <button type="submit">Delete</button>
+                    <button type="submit">Delete 🗑️</button>
                 </form>
                 <% var days = Math.floor((files[i].time_of_deletion-Date.now())/86400000) %>
                 <% var hours = Math.floor((files[i].time_of_deletion-Date.now()-(days*86400000))/3600000) %>
                 <% var minutes = Math.floor((files[i].time_of_deletion-Date.now()-(days*86400000)-(hours*3600000))/60000) %>
                 <% var seconds = Math.floor((files[i].time_of_deletion-Date.now()-(days*86400000)-(hours*3600000)-(minutes*60000))/1000) %>
-                <p>time left: <%=days%> days/<%=hours%> hours/<%=minutes%> minutes/<%=seconds%> seconds</p>
+                <p>Time left: <%=days%> days/<%=hours%> hours/<%=minutes%> minutes/<%=seconds%> seconds.</p>
             </div>
          <% } %>
     </div>
-    <hr>
-    <br>
-    <form action="/upload" method="post", enctype="multipart/form-data">
-        <input type="file" name="files" multiple>
-        <input type="number" placeholder="num of days" name="time_of_deletion">
-        <button type="submit">upload</button>
-    </form>
+    
 </body>
 </html>
