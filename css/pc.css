@@ -24,6 +24,11 @@ body{
     transition: opacity .5s; 
 }
 
+#about-popup p{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
 #popup-background{
     top: 0; 
     left: 0;
