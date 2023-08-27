@@ -8,6 +8,14 @@ body{
     min-height: 100vh;
 }
 
+footer{
+    background-color: rgb(242, 70, 47);
+    text-align: center;
+    font-weight: bold;
+    color: whitesmoke;
+    padding: 0.5%;
+}
+
 #about-popup{
     height: 50vh;
     width: 0;
@@ -22,11 +30,33 @@ body{
     border-radius: 10px;
     padding: 2%;
     transition: opacity .5s; 
+    font-size: 1.5rem;
+    line-height: 2rem;
 }
 
 #about-popup p{
-    font-size: 1.5rem;
-    line-height: 2rem;
+    position: relative;
+    float: right;
+}
+
+#about-popup h1{
+    position: relative;
+    float: left;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: rgb(242, 70, 47);
+}
+
+#about-popup button{
+    background-color: rgb(223, 53, 53);
+    border-radius: 10px;
+    padding: 1%;
+    position: relative;
+    float: right;
+}
+
+#about-popup a{
+    color: aquamarine;
 }
 
 #popup-background{
