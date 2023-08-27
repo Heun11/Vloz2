@@ -16,6 +16,7 @@
         "formidable": "*",
         "fs": "*",
         "multer": "*",
-        "path": "*"
+        "path": "*",
+        "better-sqlite3": "8.5.2"
     }
 }
