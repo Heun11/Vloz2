@@ -9,11 +9,11 @@
     }    
 
     #about-popup{
-        height: 80vh;
-        top: 20vh; 
+        height: 60vh;
+        top: 10vh; 
         left: 10vw;
         padding: 5%;
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     .info-header-box{

@@ -130,7 +130,14 @@ app.post('/delete/:filename', function(req, res){
 app.post('/download/:filename', function(req, res){
     // res.end(req.params.filename);
     var filePath = path.join(files_folder, '/'+req.params.filename);
-    res.download(filePath);
+    try{
+        if (fs.existsSync(filePath)) {
+            res.download(filePath);
+        }
+    } 
+    catch(err){
+        res.end("neda sa stiahnut");
+    }
 });
 
 app.post("/upload", upload.array('files'), (req, res) => {
