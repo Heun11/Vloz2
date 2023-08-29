@@ -23,7 +23,7 @@
         <h1>About Vloz2:</h1>
         <button onclick="closeAboutPopup()">🗙</button>
         <p>
-            Vloz2 is an updated version of <a href="https://vlozto.pythonanywhere.com/">vlozto</a> whitch was created one year before this. 
+            Vloz2 is an updated version of <a href="https://vlozto.pythonanywhere.com/">vlozto</a> which was created one year before this. 
             It was written in python with flask when I was learning to code. I wanted to recreate this using nodejs and express. I think it looks
             fine for a small website like this 😄. I am really happy if you like it. 
             <br>
@@ -40,7 +40,11 @@
     </div>
 
     <form class="upload-form" action="/upload" method="post", enctype="multipart/form-data">
-        <input type="file" name="files" multiple>
+        <!-- <input class="file-input" type="file" name="files" multiple> -->
+        <label for="file-upload" class="custom-file-upload">
+            <i class="fa fa-cloud-upload"></i> Select Files
+        </label>
+        <input id="file-upload" type="file" name="files" multiple/>
         <input type="number" placeholder="num of days" name="time_of_deletion">
         <button type="submit">Upload 🚚</button>
     </form>

@@ -2,8 +2,16 @@
 var first_time_open_popup = true;
 
 function openAboutPopup(){
-    document.getElementById("about-popup").style.width = window.innerWidth*0.4+"px";
-    document.getElementById("about-popup").style.padding = "2%";
+    var pc = window.innerWidth>560?true:false;
+
+    if(pc){
+        document.getElementById("about-popup").style.width = window.innerWidth*0.4+"px";
+        document.getElementById("about-popup").style.padding = "2%";
+    }
+    else{
+        document.getElementById("about-popup").style.width = window.innerWidth*0.8+"px";
+        document.getElementById("about-popup").style.padding = "5%";
+    }
     document.getElementById("about-popup").style.opacity = 1;
 
     document.getElementById("popup-background").style.zIndex = 1;
