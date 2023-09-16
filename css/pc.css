@@ -168,6 +168,7 @@ footer{
     margin-bottom: 1%;
     padding: 1%;
     width: fit-content;
+    text-wrap: wrap;
 }
 
 .file button{
