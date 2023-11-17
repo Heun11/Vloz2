@@ -160,6 +160,8 @@ app.post("/upload", upload.array('files'), (req, res) => {
         else{
             insert_to_files_table(file.originalname, Date.now(), Date.now()+time*86400000);
         }
+
+        
     });
     res.redirect('/');
 });
